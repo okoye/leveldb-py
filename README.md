@@ -17,9 +17,9 @@ for key, value in db:
   print key, value
 ```
 
-====================
-Supported Operations
-====================
+=========================================
+Supported Operations and Notable Features
+=========================================
 - Supports get/put/delete (with standard read/write options)
 - Supports bloomfilters
 - Supports leveldb LRU cache
@@ -29,3 +29,11 @@ Supported Operations
 - Provides prefix-based iteration (returns iterators that work as if all keys
   with a shared prefix had the prefix stripped and were dumped into their own
   database)
+- provides scoped sub-databases (presents a new database wrapper backed by an
+  existing database with all keys prefixed by some prefix)
+- provides range iterators (for idioms like give me all keys between start and
+  end)
+- provides an in-memory db implementation (for faster unit tests)
+- supports snapshots
+- fits in one file
+- requires no compilation
