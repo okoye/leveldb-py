@@ -15,6 +15,9 @@ print db.get('key')
 
 for key, value in db:
   print key, value
+
+db.delete('key')
+db.close()
 ```
 
 =========================================
